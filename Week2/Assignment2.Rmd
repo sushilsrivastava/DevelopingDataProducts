@@ -5,12 +5,6 @@ date: "July 29, 2018"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## R Markdown
-
 This page contains the interactive map created by leaflet:
 
 ```{r}
