@@ -1,0 +1,26 @@
+---
+title: "Developing Data Products- Assignment 2"
+author: "Sushil Kumar Srivastava"
+date: "July 29, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This page contains the interactive map created by leaflet:
+
+```{r}
+library(leaflet)
+
+AdobeIndiaOffice <- data.frame(lat=c(28.507421,28.589002,12.943932),lng=c(77.378769,77.344408,77.696705))
+officeDetail<-data.frame(address<-c("Sector 132 Noida", "Sector 25 Noida","Bangalore"),Employees <-c(2000,1000,1500))
+
+
+myMap<- AdobeIndiaOffice %>% leaflet() %>% addTiles() %>% addMarkers(clusterOptions = markerClusterOptions(),popup=officeDetail$address) %>% addCircles(weight = 1, radius = officeDetail$Employees)
+myMap
+```
+
