@@ -1,0 +1,35 @@
+---
+title: "Developing Data Products- Week3 Assignment"
+author: "Sushil Kumar Srivastava"
+date: "Aug 2, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+## Summary of the Data
+
+```{r echo = TRUE,cache=TRUE}
+GDP_Data2 <- read.csv('GDP.csv',header = TRUE)
+summary(GDP_Data2)
+```
+
+## GDP Graph of the top economies with Plot_ly
+
+```{r message=FALSE,error=FALSE,warning=FALSE,cache=TRUE}
+library(plotly)
+
+p<-plot_ly(data=GDP_Data2,x=~Year,y=GDP_Data2[,2],type = "scatter",mode="lines",name = colnames(GDP_Data2)[2])
+p<-add_lines(p,x=~Year,y=GDP_Data2[,3],type = "scatter",mode="lines",name = colnames(GDP_Data2)[3])
+p<-add_lines(p,x=~Year,y=GDP_Data2[,4],type = "scatter",mode="lines",name = colnames(GDP_Data2)[4])
+p<-add_lines(p,x=~Year,y=GDP_Data2[,5],type = "scatter",mode="lines",name = colnames(GDP_Data2)[5])
+p<-add_lines(p,x=~Year,y=GDP_Data2[,6],type = "scatter",mode="lines",name = colnames(GDP_Data2)[6])
+p<-add_lines(p,x=~Year,y=GDP_Data2[,7],type = "scatter",mode="lines",name = colnames(GDP_Data2)[7])
+p<-add_lines(p,x=~Year,y=GDP_Data2[,8],type = "scatter",mode="lines",name = colnames(GDP_Data2)[8])
+p
+```
+
