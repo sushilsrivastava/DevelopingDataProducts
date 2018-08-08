@@ -1,0 +1,49 @@
+Pitch
+========================================================
+author: Sushil Kumar Srivastava
+date: 08-Aug-2018
+autosize: true
+
+GDP Data of top countries
+========================================================
+
+We have taken GDP data of top countries from 1960 to 2017. Here are the countries for which we have collected the data:
+
+- United States
+- China
+- Japan
+- Germany
+- United Kingdom
+- France
+- India
+
+Summary of the data
+========================================================
+
+```{r eval=TRUE, cache=TRUE,echo=FALSE}
+GDP_Data2 <- read.csv('GDP.csv',header = TRUE)
+str(GDP_Data2)
+
+```
+
+GDP Graph of the top economies 
+========================================================
+
+```{r eval=TRUE, cache=TRUE,echo=FALSE,fig.height=10, fig.width=19}
+
+plot(x=GDP_Data2$Year,y=GDP_Data2[,2],type="l",main="GDP of Countries",xlab="Years",ylab="GDP")
+i<-3
+while(i<=length(colnames(GDP_Data2)))
+{
+  lines(x=GDP_Data2$Year,y=GDP_Data2[,i],col=i,legend=GDP_Data2[,i])
+  i<-i+1
+}
+```
+
+Current size of GDP of the top economies 
+========================================================
+
+```{r eval=TRUE, cache=TRUE,echo=FALSE,fig.height=10, fig.width=19}
+barplot(as.matrix( GDP_Data2[58,-1]))
+
+```

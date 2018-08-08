@@ -1,0 +1,12 @@
+name: Countries_GDP
+title: Countries_GDP
+username:
+account: sushilsrivastava
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 395591
+bundleId: 1519480
+url: https://sushilsrivastava.shinyapps.io/Countries_GDP/
+when: 1533498369.18161
+asMultiple: FALSE
+asStatic: FALSE
